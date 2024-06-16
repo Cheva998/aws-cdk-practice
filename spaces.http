@@ -1,0 +1,30 @@
+@id = 31bf6e60-a886-47df-a046-970ad9399ab4
+
+GET {{url}}/spaces
+###
+
+GET {{url}}/spaces?id={{id}}
+###
+
+
+POST {{url}}/spaces
+content-type: application/json
+
+{
+    "location": "Brusselss",
+    "name": "Hostal"
+}
+###
+
+PUT {{url}}/spaces?id={{id}}
+content-type: application/json
+
+{
+    "location": "Brussels",
+    "name": "Hostales"
+}
+###
+
+
+DELETE {{url}}/spaces?id={{id}}
+###
