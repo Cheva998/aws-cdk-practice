@@ -4,6 +4,12 @@
 # cdk files and folders
 cdk.json
 cdk.out/
+outputs.json
+
+# env
+dev_env.json
+dev_env.ts
+
 
 # Logs
 logs

@@ -1,8 +1,6 @@
 import { SpaceEntry } from "../model/Model"
 
 
-
-
 export class MissingFieldError extends Error {
     constructor(missingField: string) {
         super(`Value for ${missingField} expected`)
@@ -10,9 +8,8 @@ export class MissingFieldError extends Error {
 }
 
 
-export class JsonError extends Error {
+export class JsonError extends Error {}
 
-}
 
 export function validateAsSpaceEntry(arg: any){
     if ((arg as SpaceEntry).id == undefined) {
