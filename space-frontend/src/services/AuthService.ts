@@ -23,7 +23,12 @@ export class AuthService {
     public jwtToken: string | undefined;
     private temporaryCredentials: object | undefined;
 
-    public isAuthorized() {};
+    public isAuthorized() {
+        if (this.user) {
+            return true;
+        }
+        return false;
+    };
 
     public async login(userName: string, password: string):Promise<Object | undefined> {
         try {

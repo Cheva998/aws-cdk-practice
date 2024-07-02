@@ -3,6 +3,7 @@ import { marshall } from "@aws-sdk/util-dynamodb";
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from "aws-lambda";
 import { validateAsSpaceEntry } from "../shared/Validator";
 import { createRandomId, parseJSON } from "../shared/Utils";
+import { headers } from "./headers";
 
 
 export async function postSpaces(event: APIGatewayProxyEvent, ddbClient: DynamoDBClient): 
@@ -21,6 +22,7 @@ Promise<APIGatewayProxyResult> {
     console.log(result);
     return {
         statusCode: 201,
-        body: JSON.stringify({id: randomId})
+        body: JSON.stringify({id: randomId}),
+        headers: headers
     };
 }

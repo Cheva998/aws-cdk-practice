@@ -1,6 +1,7 @@
 import { DynamoDBClient, GetItemCommand, ScanCommand } from "@aws-sdk/client-dynamodb";
 import { unmarshall } from "@aws-sdk/util-dynamodb";
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from "aws-lambda";
+import { headers } from "./headers";
 
 
 
@@ -43,6 +44,7 @@ Promise<APIGatewayProxyResult> {
 
     return {
         statusCode: 200,
-        body: JSON.stringify(unmarshalledItems)
+        body: JSON.stringify(unmarshalledItems),
+        headers: headers
     }
 }

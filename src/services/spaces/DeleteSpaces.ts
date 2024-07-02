@@ -1,5 +1,6 @@
 import { DeleteItemCommand, DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from "aws-lambda";
+import { headers } from "./headers";
 
 
 
@@ -18,7 +19,8 @@ Promise<APIGatewayProxyResult> {
 
         return {
             statusCode: 200,
-            body: JSON.stringify(`Deleted space with id ${spaceId}`)
+            body: JSON.stringify(`Deleted space with id ${spaceId}`),
+            headers: headers
         }
 
 
