@@ -10,6 +10,9 @@ outputs.json
 dev_env.json
 dev_env.ts
 
+#test
+__snapshots__
+
 
 # Logs
 logs

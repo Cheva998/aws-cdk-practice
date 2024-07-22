@@ -40,7 +40,6 @@ Promise<APIGatewayProxyResult> {
         TableName: process.env.TABLE_NAME,
     }));
     const unmarshalledItems = result.Items?.map(item => unmarshall(item));
-    console.log(unmarshalledItems)
 
     return {
         statusCode: 200,
